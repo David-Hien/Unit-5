@@ -1,23 +1,31 @@
-#Implementation
+# Implementation
 class queue:
-    def __init__(self): # constructor
+    def __init__(self):  # constructor
         self.items = []
 
-    def __repr__(self) -> str: # string representation
-        output = " | ".join([str(i) for i in self.items])
-        border = "-" * (len(output) + 4)
-        return f"{border} \n| {output} |\n{border}"
+    def __repr__(self) -> str:  # string representation
+        output = ""
+        border_length = 0
 
-    def enqueue(self, item): # add an item to the end
+        for item in self.items: # generate the queue
+            output += "\x1b[6;30;42m" + str(item) + "\x1b[0m" + " | "
+            border_length += len(str(item)) + 3
+
+        border = "-" * (border_length + 1)
+
+        return f"{border} \n| {output}\n{border}"
+
+    def enqueue(self, item):  # add an item to the end
         self.items.insert(0, item)
 
     def dequeue(self):  # remove and return the first item
         return self.items.pop()
 
-    def isEmpty(self): # check if the queue is empty
+    def isEmpty(self):  # check if the queue is empty
         return self.items == []
 
-#Interface example
+
+# Interface example
 q = queue()
 q.enqueue("China")
 q.enqueue("India")
