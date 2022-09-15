@@ -2,20 +2,20 @@
 import random
 
 class Array:
-    def __init__(self, size):
+    def __init__(self, size): # constructor
         self.size = size
         self.data = [None for _ in range(size)]
 
-    def __repr__(self):
+    def __repr__(self): # string representation
         return str(self.data)
 
-    def insert(self, index, value):
+    def insert(self, index, value): # insert value at index
         if index < 0 or index >= self.size:
             raise IndexError("Index out of range")
 
         self.data[index] = value
 
-    def indexing(self, index):
+    def indexing(self, index): # return value at index
         if index < 0 or index >= self.size:
             raise IndexError("Index out of range")
 
