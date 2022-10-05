@@ -1,6 +1,5 @@
 # Implementation
 import random
-from turtle import color
 
 class stack:
     def __init__(self):  # constructor
